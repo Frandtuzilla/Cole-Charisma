@@ -1,0 +1,563 @@
+/* ==========================================================================
+   Table of Contents:
+   1. Variables & Reset
+   2. Typography
+   3. Layout & Grid
+   4. Header Components
+      4.1 Top Bar
+      4.2 Navigation
+      4.3 Logo
+   5. Slider Components
+      5.1 Container & Main Slider
+      5.2 Slides
+      5.3 Navigation Buttons
+      5.4 Text Overlay
+   6. Sections
+      6.1 General Section Styles
+      6.2 Videos Section
+      6.3 Collaborations Section
+      6.4 Social Section
+   7. Forms
+   8. Footer
+   9. Media Queries
+   ========================================================================== */
+
+/* 1. Variables & Reset
+   ========================================================================== */
+   :root {
+    --color-primary: #BF6336;    /* Dark orange */
+    --color-secondary: #E2B280;  /* Light orange */
+    --color-background: #EDE0D0; /* Light beige */
+    --color-accent-1: #88917C;   /* Green-gray */
+    --color-accent-2: #85A2A6;   /* Light blue-gray */
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --transition-default: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Blisstwin', 'Aaleyah', Arial, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    line-height: 1.6;
+}
+
+/* 2. Typography
+   ========================================================================== */
+@font-face {
+    font-family: 'Blisstwin';
+    src: url('Blisstwin.eot');
+    src: url('Blisstwin.eot?#iefix') format('embedded-opentype'),
+         url('Blisstwin.woff') format('woff'),
+         url('Blisstwin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Aaleyah';
+    src: url('aaleyah-PERSONAL-USE-ONLY.ttf') format('truetype');
+}
+
+/* 4. Header Components
+   ========================================================================== */
+/* 4.1 Top Bar */
+header {
+    background-color: transparent;
+    color: var(--color-background);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.top-bar {
+    border-bottom: none;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem 1.5rem;
+    background-color: transparent;
+    font-size: 0.8rem;
+    position: relative;
+    margin: 0 auto;
+}
+
+.top-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 97%;
+    height: 2px;
+    background-color: var(--color-white);
+}
+
+.top-bar a {
+    color: var(--color-background);
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-background);
+}
+
+.social-icons a img {
+    width: 24px;
+    height: auto;
+    transition: var(--transition-default);
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* 4.2 Navigation */
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+nav ul.nav-left {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+nav ul.nav-right {
+    flex: 1;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Blisstwin', Arial, sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-background);
+    letter-spacing: 1px;
+    transition: var(--transition-default);
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 4px 12px;
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    transform: translateY(-8px);
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    width: 200%;
+    height: 200%;
+    background-image: url('images/icons/stroke.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: var(--transition-default);
+    z-index: -1;
+}
+
+nav ul li a:hover {
+    color: var(--color-black);
+    font-weight: 700;
+}
+
+nav ul li a:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 4.3 Logo */
+.logo {
+    margin: 0 4rem;
+}
+
+.logo img {
+    height: 135px;
+    filter: brightness(0) invert(1);
+    transition: var(--transition-default);
+}
+
+/* 5. Slider Components
+   ========================================================================== */
+/* 5.1 Container & Main Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+/* 5.2 Slides */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    flex-shrink: 0;
+    left: 0;
+    top: 0;
+    will-change: transform;
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+.slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* 5.3 Navigation */
+.slider-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.slider-nav img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 115px;
+    height: 90px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: var(--transition-default);
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.slider-nav img.prev-btn {
+    left: 40px;
+}
+
+.slider-nav img.next-btn {
+    right: 40px;
+}
+
+.slider-nav img:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* 5.4 Text Overlay */
+.slider-text-overlay {
+    position: relative;
+    z-index: 2;
+    color: var(--color-background);
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slider-text-overlay h1 {
+    font-family: 'Blisstwin', 'Aaleyah';
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slider-text-overlay h2 {
+    font-family: 'Blisstwin', 'Aaleyah';
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.read-more-btn {
+    display: inline-block;
+    background-color: rgba(136, 145, 124, 0.5);
+    color: var(--color-white);
+    text-decoration: none;
+    padding: 8px 24px;
+    font-size: 0.8rem;
+    font-family: 'Blisstwin', Arial, sans-serif;
+    letter-spacing: 2px;
+    transition: var(--transition-default);
+    border: none;
+    backdrop-filter: blur(5px);
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: rgba(136, 145, 124, 0.7);
+    transform: translateY(-2px);
+}
+
+/* 6. Sections
+   ========================================================================== */
+/* 6.1 General Section Styles */
+section {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* 6.2 Videos Section */
+#videos {
+    background: var(--color-accent-1);
+    color: var(--color-background);
+}
+
+#videos h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent-2);
+}
+
+#videos p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 6.3 Collaborations Section */
+#collaborations {
+    background: var(--color-accent-1);
+    color: var(--color-background);
+}
+
+#collaborations h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent-2);
+}
+
+#collaborations p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 6.4 Social Section */
+#social {
+    background: var(--color-accent-2);
+}
+
+#social h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-background);
+}
+
+.social-posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.social-posts article {
+    background: var(--color-background);
+    padding: 1rem;
+    border: 1px solid var(--color-accent-2);
+    border-radius: 5px;
+    max-width: 300px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-posts article p {
+    margin: 0 0 0.5rem;
+    color: var(--color-primary);
+}
+
+.social-posts article span {
+    font-size: 0.9rem;
+    color: var(--color-accent-1);
+}
+
+/* 7. Forms
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+form input, 
+form button {
+    padding: 0.7rem;
+    width: 100%;
+    border: 1px solid var(--color-accent-2);
+    border-radius: 5px;
+}
+
+form button {
+    background: var(--color-primary);
+    color: var(--color-background);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+form button:hover {
+    background: var(--color-secondary);
+}
+
+/* 8. Footer
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--color-accent-1);
+    color: var(--color-background);
+}
+
+footer a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: var(--transition-default);
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+/* 9. Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    nav ul li {
+        margin: 0 1.2rem;  /* Adjusted from 1.5rem */
+    }
+    .logo img {
+        height: 100px;
+        margin: 0 2rem;
+    }
+    .slider-nav img {
+        width: 100px;
+        height: 100px;
+    }
+    .slider-text-overlay h1 {
+        font-size: 2.5rem;
+    }
+    .slider-text-overlay h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 0.8rem;  /* Adjusted from 1rem */
+    }
+    .logo img {
+        height: 80px;
+        margin: 0 1.5rem;
+    }
+    nav ul li a {
+        font-size: 0.85rem;  /* Adjusted from 0.9rem */
+        padding: 4px 10px;  /* Adjusted from 4px 12px */
+    }
+    .slider-nav img {
+        width: 80px;
+        height: 80px;
+    }
+    .prev-btn {
+        left: 20px;
+    }
+    .next-btn {
+        right: 20px;
+    }
+    .slider-text-overlay h1 {
+        font-size: 2rem;
+    }
+    .slider-text-overlay h2 {
+        font-size: 1.1rem;
+    }
+    .read-more-btn {
+        padding: 6px 20px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar {
+        padding: 0.2rem 1rem;
+    }
+    nav ul li {
+        margin: 0 0.6rem;  /* Added for smaller screens */
+    }
+}
