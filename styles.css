@@ -366,6 +366,39 @@ nav ul li a:hover::before {
     transform: translateY(-2px);
 }
 
+/* 5.5 Press Logos */
+.press-logos {
+    background-image: url('images/paint-stroke.png');
+    background-repeat: no-repeat;
+    background-size: 110% 110%;
+    background-position: top center;
+    margin-top: -80px;
+    padding:110px 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-container img {
+    height: 150px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(446%) hue-rotate(152deg) brightness(87%) contrast(84%);
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
+}
+
+
 /* 6. Sections
    ========================================================================== */
 /* 6.1 General Section Styles */
