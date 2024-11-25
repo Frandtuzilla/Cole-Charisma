@@ -155,6 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function initHeaderScroll() {
+        const header = document.querySelector('header');
+        const scrollThreshold = 100; // Adjust this value to change when the background appears
+        
+        function updateHeaderBackground() {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        // Initial check
+        updateHeaderBackground();
+        
+        // Add scroll event listener
+        window.addEventListener('scroll', updateHeaderBackground);
+    }
+    
     function initReadMoreButtons() {
         sliderElements.readMoreBtns.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -171,12 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize everything
     function init() {
         initSmoothScroll();
-        initializeSlides(); // Initialize slide positions
+        initializeSlides();
         initSliderControls();
         initReadMoreButtons();
         startAutoSlide();
+        initHeaderScroll(); // Add this line
     }
 
     // Start the application
     init();
 });
+

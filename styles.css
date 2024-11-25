@@ -72,6 +72,41 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(191, 99, 54, 0.60); /* Using your --color-primary with opacity */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header.scrolled .top-bar::after {
+    opacity: 0.5;
+}
+
+header.scrolled .logo img {
+    height: 100px; /* Slightly smaller logo when scrolled */
+    transition: height 0.3s ease;
+}
+
+/* Update these selectors to maintain text visibility when header background changes */
+header.scrolled nav ul li a,
+header.scrolled .top-bar,
+header.scrolled .top-bar a,
+header.scrolled .social-icons a {
+    color: var(--color-white);
+}
+
+/* Optional: Adjust the nav links hover state for better visibility */
+header.scrolled nav ul li a:hover {
+    color: var(--color-background);
+}
+
+@media (max-width: 768px) {
+    header.scrolled .logo img {
+        height: 80px;
+    }
 }
 
 .top-bar {
