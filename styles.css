@@ -27,10 +27,10 @@
     /* Utility Colors */
     --color-border: rgba(191, 99, 54, 0.2);
     --color-overlay: rgba(44, 24, 16, 0.6);
-    --transition-default: all 0.3s ease;
 }
 
 * {
+    font-family: 'Quicksand';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -56,7 +56,6 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Keeping Aaleyah font as it's used in specific sections */
 @font-face {
     font-family: 'Aaleyah';
     src: url('../fonts/aaleyah/aaleyah.ttf') format('truetype');
@@ -73,7 +72,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: var(--transition-default);
+    transition: all 0.3s ease;
 }
 
 header.scrolled {
@@ -99,7 +98,7 @@ header.scrolled .social-icons a {
 }
 
 header.scrolled nav ul li a:hover {
-    color: var(--color-background);
+    color: black;
 }
 
 .top-bar {
@@ -129,7 +128,7 @@ header.scrolled nav ul li a:hover {
 .top-bar a {
     color: var(--color-text-light);
     text-decoration: none;
-    transition: var(--transition-default);
+    transition: all 0.3s ease;
 }
 
 .social-icons {
@@ -149,7 +148,7 @@ header.scrolled nav ul li a:hover {
     width: 24px;
     height: 24px;
     vertical-align: middle;
-    transition: var(--transition-default);
+    transition: all 0.3s ease;
 }
 
 .social-icons a {
@@ -373,7 +372,7 @@ nav ul li a:hover::before {
     transition: var(--transition-default);
     border: none;
     border-radius: 4px;
-    margin-top: 20px;
+    margin-top: 5px;
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
@@ -429,7 +428,7 @@ section {
     background-image: url('images/backgrounds/background1.jpg');
     width: 100%;
     height: 100%;
-    background-size: 100% 80%;
+    background-size: 100% 100%;
     padding: 80px 0;
     position: relative;
     z-index: 1;
@@ -443,8 +442,8 @@ section {
 
 .welcome-section h1 {
     text-align: center;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-bottom: 60px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 30px;
     font-family: 'Blisstwin';
 }
 
@@ -472,15 +471,12 @@ section {
     overflow: hidden;
     width: 100%;
     height: 0;
-    padding-bottom: 75%;
+    padding-bottom: 60%;
     position: relative;
     transition: var(--transition-default);
+    margin: 0 auto;
 }
 
-.welcome-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
 
 .welcome-image img {
     position: absolute;
@@ -493,83 +489,24 @@ section {
 }
 
 .welcome-text {
-    padding: 20px 0;
+    padding: 50px 0;
 }
 
 .welcome-text h2 {
     font-family: 'Blisstwin';
     color: var(--color-primary);
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    margin-bottom: 30px;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    margin-bottom: 5px;
 }
 
 .highlight-text {
-    background: rgba(133, 162, 166, 0.1);
-    padding: 25px;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     line-height: 1.8;
     color: var(--color-text-secondary);
-    border-left: 4px solid var(--color-secondary);
 }
 
-/* 6.3 Video Preview Section */
-.video-preview {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-}
 
-.video-thumbnail {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transition: var(--transition-default);
-}
-
-.video-thumbnail:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.3);
-    transition: var(--transition-default);
-}
-
-.play-button {
-    font-size: 3rem;
-    color: var(--color-text-light);
-    margin-bottom: 1rem;
-    background: rgba(255, 159, 102, 0.8);
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.play-overlay h3 {
-    color: var(--color-text-light);
-    font-family: 'Blisstwin';
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
 
 /* 7. Forms
    ========================================================================== */
