@@ -199,7 +199,7 @@ nav ul.nav-right {
 
 nav ul li a {
     text-decoration: none;
-    font-family: 'Blisstwin', cursive;
+    font-family: 'Blisstwin';
     font-size: 1rem;
     color: var(--color-text-light);
     letter-spacing: 0.05em;
@@ -711,7 +711,6 @@ footer a:hover {
 @media (max-width: 480px) {
     .top-bar {
         padding: 0.5rem 1rem;
-        flex-direction: column;
         gap: 10px;
     }
     
