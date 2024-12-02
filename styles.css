@@ -1,28 +1,52 @@
+/*==========================================================================
+ * Table of Contents:
+ * 1. Variables & Reset
+ * 2. Typography
+ * 3. Header
+ *    3.1 Top Bar
+ *    3.2 Navigation
+ *    3.3 Logo
+ * 4. Slider Components
+ *    4.1 Container & Main Slider
+ *    4.2 Slides
+ *    4.3 Navigation
+ *    4.4 Text Overlay
+ *    4.5 Press Logos
+ * 5. Sections
+ *    5.1 General Section Styles
+ *    5.2 Welcome Section
+ *    5.3 Collaboration Section
+ * 6. Social Posts
+ * 7. Forms
+ * 8. Footer
+ * 9. Media Queries
+==========================================================================*/
+
 /* 1. Variables & Reset
-   ========================================================================== */
-   :root {
+========================================================================== */
+:root {
     /* Primary Colors */
-    --color-primary: #BF6336;         /* Warm Brown - Brand color */
-    --color-primary-light: #D88559;   /* Lighter version for hover states */
-    --color-primary-dark: #A54D24;    /* Darker version for text */
+    --color-primary: #BF6336;
+    --color-primary-light: #D88559;
+    --color-primary-dark: #A54D24;
     
     /* Secondary Colors */
-    --color-secondary: #85A2A6;       /* Muted Blue-Gray */
-    --color-secondary-light: #A7BCBF; /* Lighter version */
-    --color-secondary-dark: #6A8387;  /* Darker version */
+    --color-secondary: #85A2A6;
+    --color-secondary-light: #A7BCBF;
+    --color-secondary-dark: #6A8387;
     
     /* Background Colors */
-    --color-background: #FBF7F4;      /* Warm White - Main background */
-    --color-background-alt: #EDE0D0;  /* Beige - Secondary background */
+    --color-background: #FBF7F4;
+    --color-background-alt: #EDE0D0;
     
     /* Accent Colors */
-    --color-accent: #88917C;          /* Sage Green */
-    --color-accent-light: #A1A892;    /* Lighter sage */
+    --color-accent: #88917C;
+    --color-accent-light: #A1A892;
     
     /* Text Colors */
-    --color-text-primary: #2C1810;    /* Dark Brown - Primary text */
-    --color-text-secondary: #595959;  /* Gray - Secondary text */
-    --color-text-light: #FFFFFF;      /* White - Light text */
+    --color-text-primary: #2C1810;
+    --color-text-secondary: #595959;
+    --color-text-light: #FFFFFF;
     
     /* Utility Colors */
     --color-border: rgba(191, 99, 54, 0.2);
@@ -43,7 +67,7 @@ body {
 }
 
 /* 2. Typography
-   ========================================================================== */
+========================================================================== */
 @font-face {
     font-family: 'Blisstwin';
     src: url('../fonts/Blisstwin/Blisstwin.woff2') format('woff2'),
@@ -60,9 +84,9 @@ body {
     font-display: swap;
 }
 
-/* 4. Header Components
-   ========================================================================== */
-/* 4.1 Top Bar */
+/* 3. Header
+========================================================================== */
+/* 3.1 Top Bar */
 header {
     font-family: 'Blisstwin';
     background-color: transparent;
@@ -160,7 +184,7 @@ header.scrolled nav ul li a:hover {
     transform: scale(1.2);
 }
 
-/* 4.2 Navigation */
+/* 3.2 Navigation */
 .nav-container {
     display: flex;
     justify-content: center;
@@ -236,7 +260,7 @@ nav ul li a:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* 4.3 Logo */
+/* 3.3 Logo */
 .logo {
     margin: 0 4rem;
 }
@@ -247,9 +271,9 @@ nav ul li a:hover::before {
     transition: var(--transition-default);
 }
 
-/* 5. Slider Components
-   ========================================================================== */
-/* 5.1 Container & Main Slider */
+/* 4. Slider Components
+========================================================================== */
+/* 4.1 Container & Main Slider */
 .slider-container {
     position: relative;
     width: 100%;
@@ -265,7 +289,7 @@ nav ul li a:hover::before {
     overflow: hidden;
 }
 
-/* 5.2 Slides */
+/* 4.2 Slides */
 .slide {
     min-width: 100%;
     height: 100%;
@@ -296,7 +320,7 @@ nav ul li a:hover::before {
     z-index: 0;
 }
 
-/* 5.3 Navigation */
+/* 4.3 Navigation */
 .slider-nav {
     position: absolute;
     top: 0;
@@ -331,7 +355,7 @@ nav ul li a:hover::before {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* 5.4 Text Overlay */
+/* 4.4 Text Overlay */
 .slider-text-overlay {
     position: relative;
     z-index: 2;
@@ -381,7 +405,7 @@ nav ul li a:hover::before {
     transform: translateY(-2px);
 }
 
-/* 5.5 Press Logos */
+/* 4.5 Press Logos */
 .press-logos {
     background-image: url('images/backgrounds/paint-stroke.png');
     background-repeat: no-repeat;
@@ -413,15 +437,15 @@ nav ul li a:hover::before {
     transform: scale(1.05);
 }
 
-/* 6. Sections
-   ========================================================================== */
-/* 6.1 General Section Styles */
+/* 5. Sections
+========================================================================== */
+/* 5.1 General Section Styles */
 section {
     padding: 4rem 0;
     text-align: center;
 }
 
-/* 6.2 Welcome Section */
+/* 5.2 Welcome Section */
 .welcome-section {
     background-image: url('images/backgrounds/background1.jpg');
     width: 100%;
@@ -484,7 +508,6 @@ section {
     margin: 0 auto;
 }
 
-
 .welcome-image img {
     position: absolute;
     top: 0;
@@ -498,6 +521,8 @@ section {
 .welcome-text {
     padding: 50px 0;
 }
+
+/* Continuing from Welcome Text h2 */
 
 .welcome-text h2 {
     font-family: 'Blisstwin';
@@ -513,8 +538,7 @@ section {
     color: var(--color-text-secondary);
 }
 
-/* 6.3 Collaboration Section */
-
+/* 5.3 Collaboration Section */
 .collaboration-section {
     position: relative;
     padding-bottom: 80px;
@@ -526,32 +550,31 @@ section {
     background-size: cover;
 }
 
-
 .collaboration-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     gap: 4rem;
     position: relative;
-    overflow: visible; /* Allow child elements to overflow */
+    overflow: visible;
 }
 
-/* Left side styling */
+/* Photo Container Styling */
 .photo-container {
     flex: 1;
     position: relative;
     display: flex;
     justify-content: center;
-    width: 100vw; /* Make container full viewport width */
-    margin-left: calc(-50vw + 50%); /* Center the container */
-    overflow: visible; /* Allow content to overflow */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    overflow: visible;
 }
 
 .photo-container img {
-    max-width: 680px; /* Remove max-width constraint */
-    width: 100vw; /* Make image full viewport width */
-    height: auto; /* Maintain aspect ratio */
-    position: relative; /* Help with z-index if needed */
+    max-width: 680px;
+    width: 100vw;
+    height: auto;
+    position: relative;
     margin-top: -25px;
 }
 
@@ -597,7 +620,7 @@ section {
     opacity: 0.2;
 }
 
-/* Right side styling */
+/* Collaboration Content Styling */
 .collaboration-content {
     flex: 1;
     display: flex;
@@ -621,100 +644,11 @@ section {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     max-width: 585px;
-    text-align: left; 
+    text-align: left;
 }
 
-/* Form styling */
-.contact-form form {
-    display: flex;
-    flex-direction: row;
-    gap: 0.75rem;
-    margin: 0;
-    max-width: 100%;
-}
-
-.contact-form input {
-    flex: 1;
-    height: 45px;
-    padding: 0 1rem;
-    border: 1px solid #E5E5E5;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    background: white;
-}
-
-.contact-form button {
-    flex: 0.8;
-    height: 45px;
-    background: #8B8E82;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-family: 'Blisstwin', serif;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    padding: 0 1.5rem;
-    white-space: nowrap;
-    font-style: italic;
-}
-
-.contact-form button:hover {
-    background: #767969;
-}
-
-/* Make form responsive */
-@media (max-width: 768px) {
-    .contact-form form {
-        flex-direction: column;
-    }
-    
-    .contact-form button {
-        width: 100%;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .collaboration-content {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .collaboration-content h2 {
-        font-size: 2rem;
-    }
-    .contact-form {
-        flex-direction: column; 
-    }
-}
-
-/* Responsive styling */
-@media (max-width: 992px) {
-    .collaboration-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .collaboration-content {
-        align-items: center;
-    }
-    
-    .contact-form {
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .collaboration-section {
-        padding: 4rem 1rem;
-    }
-}
-
+/* 6. Social Posts
+========================================================================== */
 .social-posts {
     max-width: 1200px;
     margin: 0 auto;
@@ -804,7 +738,8 @@ section {
     z-index: 2;
 }
 
-.prev, .next {
+.prev,
+.next {
     background-color: #7B9E9D;
     color: white;
     border: none;
@@ -828,43 +763,13 @@ section {
     right: -20px;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: #C85C3F;
 }
 
-@media (max-width: 768px) {
-    .social-posts h2 {
-        font-size: 2rem;
-    }
-
-    .post {
-        flex: 0 0 100%;
-    }
-
-    .posts-grid {
-        gap: 20px;
-    }
-
-    .post-info {
-        padding: 15px;
-    }
-
-    .caption {
-        font-size: 1.1rem;
-    }
-
-    .post-navigation {
-        position: relative;
-        margin-top: 20px;
-        padding: 0 10px;
-    }
-
-    .prev, .next {
-        position: static;
-    }
-}
 /* 7. Forms
-   ========================================================================== */
+========================================================================== */
 form {
     display: flex;
     flex-direction: column;
@@ -872,6 +777,45 @@ form {
     gap: 1rem;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    margin: 0;
+    max-width: 100%;
+}
+
+.contact-form input {
+    flex: 1;
+    height: 45px;
+    padding: 0 1rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.contact-form button {
+    flex: 0.8;
+    height: 45px;
+    background: #8B8E82;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Blisstwin', serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    white-space: nowrap;
+    font-style: italic;
+}
+
+.contact-form button:hover {
+    background: #767969;
 }
 
 form input,
@@ -906,7 +850,7 @@ form button:hover {
 }
 
 /* 8. Footer
-   ========================================================================== */
+========================================================================== */
 footer {
     text-align: center;
     padding: 3rem 0;
@@ -926,102 +870,477 @@ footer a:hover {
 }
 
 /* 9. Media Queries
-   ========================================================================== */
+========================================================================== */
+
+/* Extra Large Devices (Large Desktops) */
+@media (max-width: 1400px) {
+    .logo {
+        margin: 0 3rem;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .collaboration-container,
+    .welcome-container,
+    .social-posts {
+        max-width: 1140px;
+        padding: 0 2rem;
+    }
+}
+
+/* Large Devices (Desktops) */
 @media (max-width: 1200px) {
-    nav ul li {
-        margin: 0 1.2rem;
+    /* Header & Navigation */
+    nav ul {
+        gap: 1.5rem;
     }
     
     .logo img {
-        height: 100px;
+        height: 110px;
         margin: 0 2rem;
     }
     
+    nav ul li a {
+        font-size: 0.95rem;
+        padding: 4px 10px;
+    }
+
+    /* Top Bar */
+    .top-bar {
+        padding: 0.7rem 1rem;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    /* Slider */
     .slider-nav img {
-        width: 100px;
-        height: 80px;
+        width: 90px;
+        height: 70px;
     }
     
+    .slider-text-overlay h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    /* Welcome Section */
     .welcome-content {
         gap: 40px;
     }
+
+    /* Press Logos */
+    .logo-container {
+        padding: 0 20px;
+    }
+
+    .logo-container img {
+        height: 120px;
+    }
 }
 
+/* Medium Devices (Tablets) */
 @media (max-width: 992px) {
+    /* Header & Navigation */
+    .nav-container {
+        flex-direction: column;
+        padding: 1rem 0;
+    }
+
+    nav {
+        padding: 1rem;
+    }
+
+    nav ul.nav-left,
+    nav ul.nav-right {
+        justify-content: center;
+        gap: 1.2rem;
+    }
+
+    .logo img {
+        height: 90px;
+        margin: 0.5rem 0;
+    }
+
+    /* Sections */
     .welcome-content {
         grid-template-columns: 1fr;
+        max-width: 700px;
+        margin: 0 auto;
     }
     
-    .video-preview {
-        grid-template-columns: 1fr;
+    .welcome-image {
+        padding-bottom: 70%;
+    }
+
+    .welcome-text {
+        padding: 30px 0;
         text-align: center;
     }
-    
-    .press-logos .logo-container {
+
+    /* Collaboration Section */
+    .collaboration-section {
+        max-height: none;
+        padding: 40px 0;
+    }
+
+    .collaboration-container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .photo-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .photo-container img {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .collaboration-content {
+        padding: 0 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .collaboration-content p {
+        text-align: center;
+    }
+
+    /* Social Posts */
+    .post {
+        flex: 0 0 calc((100% - 30px) / 2);
+    }
+
+    /* Forms */
+    .contact-form {
+        padding: 0 20px;
+    }
+}
+
+/* Small Devices (Landscape Phones) */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    header.scrolled .logo img {
+        height: 80px;
+    }
+
+    .top-bar {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 30px;
+        gap: 1rem;
     }
-    
-    .logo-container img {
-        height: 100px;
-    }
-}
 
-@media (max-width: 768px) {
-    nav ul li {
-        margin: 0 0.8rem;
-    }
-    
-    .logo img {
-        height: 80px;
-        margin: 0 1.5rem;
-    }
-    
     nav ul li a {
         font-size: 0.85rem;
-        padding: 4px 10px;
+        padding: 4px 8px;
+        transform: translateY(-4px);
     }
-    
+
+    /* Slider */
+    .slider-container {
+        height: 80vh;
+    }
+
     .slider-nav img {
-        width: 80px;
-        height: 60px;
+        width: 70px;
+        height: 55px;
     }
-    
-    .prev-btn {
+
+    .slider-nav img.prev-btn {
         left: 20px;
     }
-    
-    .next-btn {
+
+    .slider-nav img.next-btn {
         right: 20px;
     }
-    
-    .highlight-text {
-        padding: 20px;
-    }
-}
 
-@media (max-width: 480px) {
-    .top-bar {
-        padding: 0.5rem 1rem;
-        gap: 10px;
+    .slider-text-overlay {
+        padding: 0 15px;
     }
-    
-    nav ul li {
-        margin: 0 0.6rem;
+
+    .slider-text-overlay h1 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
     }
-    
-    .social-icons {
-        gap: 8px;
+
+    .slider-text-overlay h2 {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
     }
-    
-    .social-icons img {
-        width: 20px;
-        height: 20px;
-    }
-    
+
+    /* Welcome Section */
     .welcome-section h1 {
         font-size: 2rem;
     }
+
+    .welcome-image {
+        padding-bottom: 80%;
+    }
+
+    .highlight-text {
+        padding: 15px;
+    }
+
+    /* Social Posts */
+    .social-posts {
+        padding: 20px 15px;
+    }
+
+    .social-posts h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .post {
+        flex: 0 0 100%;
+    }
+
+    .posts-grid {
+        gap: 20px;
+    }
+
+    .post-info {
+        padding: 15px;
+    }
+
+    .caption {
+        font-size: 1.1rem;
+    }
+
+    /* Forms */
+    .contact-form form {
+        flex-direction: column;
+        gap: 1rem;
+    }
     
+    .contact-form input,
+    .contact-form button {
+        width: 100%;
+    }
+
+    /* Press Logos */
+    .press-logos {
+        margin-top: -40px;
+        padding: 80px 0 40px;
+    }
+
+    .logo-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .logo-container img {
+        height: 80px;
+    }
+}
+
+/* Extra Small Devices (Portrait Phones) */
+@media (max-width: 576px) {
+    /* Header & Navigation */
+    header {
+        position: relative;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    nav ul.nav-left,
+    nav ul.nav-right {
+        width: 100%;
+        text-align: center;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    /* Slider */
+    .slider-container {
+        height: 70vh;
+    }
+
+    .slider-nav img {
+        width: 50px;
+        height: 40px;
+    }
+
+    .read-more-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 3rem 0;
+    }
+
+    .welcome-section {
+        padding: 40px 0;
+    }
+
+    .welcome-content {
+        gap: 30px;
+    }
+
+    .welcome-text h2 {
+        font-size: clamp(1.3rem, 3vw, 1.8rem);
+    }
+
+    /* Collaboration Section */
+    .collaboration-content h2 {
+        font-size: 2rem;
+    }
+
+    .collaboration-content p {
+        font-size: 1.1rem;
+    }
+
+    /* Social Posts */
+    .platform-icon {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+    }
+
+    .post img {
+        height: 250px;
+    }
+
+    /* Forms */
+    form {
+        padding: 0 15px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+/* Tiny Devices */
+@media (max-width: 375px) {
+    /* Header */
+    .top-bar {
+        padding: 0.5rem;
+    }
+
+    .social-icons img {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Slider */
+    .slider-container {
+        height: 60vh;
+    }
+
+    .slider-text-overlay h1 {
+        font-size: clamp(1.3rem, 3.5vw, 2rem);
+    }
+
+    .slider-text-overlay h2 {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+
+    /* Sections */
+    .welcome-section h1 {
+        font-size: 1.7rem;
+    }
+
+    .collaboration-content h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Forms */
+    .contact-form button {
+        padding: 0 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Height-based Media Queries */
+@media (max-height: 700px) {
+    .slider-container {
+        height: 90vh;
+    }
+}
+
+@media (max-height: 600px) {
+    .slider-container {
+        height: 100vh;
+    }
+    
+    .slider-text-overlay {
+        transform: scale(0.9);
+    }
+}
+
+/* Print Media Query */
+@media print {
+    header, 
+    .slider-nav,
+    .read-more-btn,
+    .social-icons,
+    footer {
+        display: none;
+    }
+
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    .slider-text-overlay,
+    .welcome-content,
+    .collaboration-content {
+        page-break-inside: avoid;
+    }
+}
+
+/* Dark Mode Media Query */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #1a1a1a;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #cccccc;
+    }
+
+    .post,
+    .hanging-photo {
+        background: #2a2a2a;
+    }
+
+    .date {
+        color: #999;
+    }
+
+    .platform-icon {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
 }
