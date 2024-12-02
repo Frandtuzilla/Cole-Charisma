@@ -38,8 +38,6 @@
 
 body {
     font-family: 'Blisstwin';
-    background-color: var(--color-background);
-    color: var(--color-text-primary);
     line-height: 1.6;
     font-size: 16px;
 }
@@ -385,7 +383,7 @@ nav ul li a:hover::before {
 
 /* 5.5 Press Logos */
 .press-logos {
-    background-image: url('images/paint-stroke.png');
+    background-image: url('images/backgrounds/paint-stroke.png');
     background-repeat: no-repeat;
     background-size: 110% 110%;
     background-position: top center;
@@ -432,6 +430,16 @@ section {
     padding: 80px 0;
     position: relative;
     z-index: 1;
+}
+
+.new-videos {
+    background-image: url('images/backgrounds/background2.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: 100% 140%;
+    padding: 30px 0;
+    padding-bottom: 70px;
+    position: relative;
 }
 
 .welcome-container {
@@ -504,6 +512,157 @@ section {
     margin-bottom: 10px;
     line-height: 1.8;
     color: var(--color-text-secondary);
+}
+
+/* 6.3 Collaboration Section */
+
+.collaboration-section {
+    position: relative;
+    padding: 6rem 2rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/backgrounds/paint-stroke2.png');
+    background-size: cover;
+}
+
+
+.collaboration-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left side styling */
+.photo-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hanging-photo {
+    position: relative;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+}
+
+.clip {
+    position: absolute;
+    top: -1rem;
+    width: 1.5rem;
+    height: 2rem;
+    background: #A8A8A8;
+    border-radius: 0 0 50% 50%;
+}
+
+.clip.left {
+    left: 30%;
+}
+
+.clip.right {
+    right: 30%;
+}
+
+.hanging-photo img {
+    max-width: 400px;
+    height: auto;
+    display: block;
+}
+
+.decorative-monogram {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Blisstwin', serif;
+    font-size: 4rem;
+    color: #89B3C5;
+    opacity: 0.2;
+}
+
+/* Right side styling */
+.collaboration-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.collaboration-content h2 {
+    font-family: 'Blisstwin', serif;
+    color: #B76E44;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.collaboration-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* Form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.contact-form input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: white;
+}
+
+.contact-form button {
+    background: #8B8E82;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #767969;
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .collaboration-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .collaboration-content {
+        align-items: center;
+    }
+    
+    .contact-form {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .collaboration-section {
+        padding: 4rem 1rem;
+    }
+    
+    .hanging-photo img {
+        max-width: 100%;
+    }
 }
 
 
