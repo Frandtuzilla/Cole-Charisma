@@ -80,8 +80,10 @@ body {
 
 @font-face {
     font-family: 'Aaleyah';
-    src: url('../fonts/aaleyah/aaleyah.woff2') format('woff2'),
-         url('../fonts/aaleyah/aaleyah.ttf') format('truetype');
+    src: url('/fonts/aaleyah/aaleyah.woff2') format('woff2'),
+         url('/fonts/aaleyah/aaleyah.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
     font-display: swap;
 }
 
