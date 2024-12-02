@@ -518,8 +518,9 @@ section {
 
 .collaboration-section {
     position: relative;
-    padding: 6rem 2rem;
+    padding-bottom: 80px;
     overflow: hidden;
+    max-height: 670px;
     width: 100%;
     height: 100%;
     background-image: url('images/backgrounds/paint-stroke2.png');
@@ -533,7 +534,7 @@ section {
     display: flex;
     gap: 4rem;
     position: relative;
-    z-index: 2;
+    overflow: visible; /* Allow child elements to overflow */
 }
 
 /* Left side styling */
@@ -542,6 +543,17 @@ section {
     position: relative;
     display: flex;
     justify-content: center;
+    width: 100vw; /* Make container full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center the container */
+    overflow: visible; /* Allow content to overflow */
+}
+
+.photo-container img {
+    max-width: 680px; /* Remove max-width constraint */
+    width: 100vw; /* Make image full viewport width */
+    height: auto; /* Maintain aspect ratio */
+    position: relative; /* Help with z-index if needed */
+    margin-top: -25px;
 }
 
 .hanging-photo {
