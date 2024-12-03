@@ -87,6 +87,15 @@ body {
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Lazy Ride';
+    src: url('../fonts/Lazy Ride/Lazy Ride.woff2') format('woff2'),
+         url('../fonts/Lazy Ride/Lazy Ride.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* 3. Header
 ========================================================================== */
 /* 3.1 Top Bar */
@@ -488,7 +497,7 @@ section {
 }
 
 .title-blue {
-    font-family: 'Aaleyah';
+    font-family: 'Lazy Ride';
     color: var(--color-secondary);
 }
 
