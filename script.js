@@ -55,10 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function initSmoothScroll() {
         document.querySelectorAll('nav ul li a').forEach(link => {
             link.addEventListener('click', event => {
+                const href = link.getAttribute('href');
+                
+                // Check if the link is to another page (contains .html or starts with http/https)
+                if (href.includes('.html') || href.startsWith('http')) {
+                    return; // Let the default navigation happen
+                }
+                
+                // Only prevent default for same-page anchor links
                 event.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
+                const targetId = href.substring(1);
                 const targetSection = document.getElementById(targetId);
-
+    
                 if (targetSection) {
                     window.scrollTo({
                         top: targetSection.offsetTop,
