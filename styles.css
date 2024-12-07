@@ -499,7 +499,7 @@ section {
     overflow: hidden;
     width: 100%;
     height: 0;
-    padding-bottom: 60%;
+    padding-bottom: 57%;
     position: relative;
     transition: var(--transition-default);
     margin: 0 auto;
