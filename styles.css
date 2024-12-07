@@ -968,9 +968,10 @@ form button:hover {
 }
 
 .press-description {
-    max-width: 800px;
+    max-width: 550px;
     margin: 0 auto;
     color: #666;
+    font-size: medium;
     line-height: 1.6;
 }
 
