@@ -1034,7 +1034,7 @@ form button:hover {
     margin-bottom: 2rem;
 }
 
-.banner-overlay {
+.bannerpress-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -1088,7 +1088,241 @@ form button:hover {
     color: inherit;
 }
 
-/* 11. Media Queries
+/* 11. CONTACT SITE
+========================================================================== */
+
+.bannercontact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/banners/CONTACTUSBANNER.png');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.3) brightness(0.7);
+}
+
+/* Collaboration Info Section */
+.collaboration-info {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+}
+
+.collab-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.collab-container h2 {
+    font-family: 'Blisstwin';
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.collab-container .highlight {
+    color: var(--color-primary);
+}
+
+.collab-container p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content h2 {
+    font-family: 'Blisstwin';
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.contact-content .highlight {
+    color: var(--color-primary);
+}
+
+.contact-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.contact-form textarea {
+    grid-column: span 2;
+    resize: vertical;
+}
+
+.file-input {
+    padding: 8px !important;
+}
+
+.submit-btn {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 40px;
+    font-family: 'Blisstwin';
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    width: auto;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--color-accent-light);
+}
+
+/* Media Kit Section */
+.media-kit-section {
+    padding: 4rem 2rem;
+    background-color: var(--color-background);
+}
+
+.media-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.media-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.media-content h2 {
+    font-family: 'Blisstwin';
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.media-content .highlight {
+    color: var(--color-secondary);
+}
+
+.media-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.download-btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px 40px;
+    border-radius: 4px;
+    font-family: 'Blisstwin';
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+    background: var(--color-accent-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid,
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form textarea {
+        grid-column: span 1;
+    }
+
+    .collab-container h2,
+    .contact-content h2,
+    .media-content h2 {
+        font-size: 2rem;
+    }
+
+    .contact-image,
+    .media-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .collaboration-info,
+    .contact-form-section,
+    .media-kit-section {
+        padding: 2rem 1rem;
+    }
+
+    .collab-container h2,
+    .contact-content h2,
+    .media-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* 12. Media Queries
 ========================================================================== */
 /* Responsive Adjustments for Press Site */
 @media (max-width: 768px) {
