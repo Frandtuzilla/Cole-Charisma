@@ -55,31 +55,26 @@ body {
 ========================================================================== */
 @font-face {
     font-family: 'Blisstwin';
-    src: url('../fonts/Blisstwin/Blisstwin.woff2') format('woff2'),
-         url('../fonts/Blisstwin/Blisstwin.otf') format('opentype');
-    font-display: swap;
-    font-style: italic;
+    src: url('images/fonts/Blisstwin/Blisstwin.eot'); /* IE9 Compat Modes */
+    src: url('images/fonts/Blisstwin/Blisstwin.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('images/fonts/Blisstwin/Blisstwin.woff') format('woff'), /* Modern Browsers */
+         url('images/fonts/Blisstwin/Blisstwin.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: italic;
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
 
+
 @font-face {
     font-family: 'Aaleyah';
-    src: url('../fonts/aaleyah/aaleyah.woff2') format('woff2'),
-         url('../fonts/aaleyah/aaleyah.otf') format('opentype');
+    src: url('images/fonts/Aaleyah/aaleyah.woff2') format('woff2'),
+         url('images/fonts/Aaleyah/aaleyah.otf') format('opentype'),
+         url('images/fonts/Aaleyah/aaleyah.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-@font-face {
-    font-family: 'Lazy Ride';
-    src: url('../fonts/Lazy Ride/Lazy Ride.woff2') format('woff2'),
-         url('../fonts/Lazy Ride/Lazy Ride.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
 /* 4. Header
 ========================================================================== */
@@ -482,7 +477,7 @@ section {
 }
 
 .title-blue {
-    font-family: 'Lazy Ride';
+    font-family: 'Aaleyah';
     color: var(--color-secondary);
 }
 
@@ -1130,7 +1125,7 @@ form button:hover {
 }
 
 .collab-container p {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     color: var(--color-text-secondary);
     line-height: 1.6;
@@ -1139,7 +1134,7 @@ form button:hover {
 
 /* Contact Form Section */
 .contact-form-section {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
     background-color: white;
 }
 
@@ -1181,7 +1176,6 @@ form button:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 .contact-form input,
@@ -1224,7 +1218,7 @@ form button:hover {
 
 /* Media Kit Section */
 .media-kit-section {
-    padding: 4rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .media-container {

@@ -341,10 +341,10 @@ document.addEventListener('DOMContentLoaded', () => {
             startMainAutoSlide();
         }
 
-        if (socialSliderElements.container) {
-            initSocialSliderControls();
-            startSocialAutoSlide();
-        }
+            if (socialSliderElements.container) {
+                initSocialSliderControls();
+                startSocialAutoSlide();
+            }
 
         initSmoothScroll();
         initHeaderScroll();
