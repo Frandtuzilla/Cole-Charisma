@@ -1105,9 +1105,12 @@ form button:hover {
 
 /* Collaboration Info Section */
 .collaboration-info {
-    padding: 4rem 2rem;
-    background-color: var(--color-background);
-}
+    padding: 5rem 0rem;
+    background-image: url('images/backgrounds/CONTACTUSBACKGROUND.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;}
 
 .collab-container {
     max-width: 1200px;
@@ -1222,7 +1225,6 @@ form button:hover {
 /* Media Kit Section */
 .media-kit-section {
     padding: 4rem 2rem;
-    background-color: var(--color-background);
 }
 
 .media-container {
