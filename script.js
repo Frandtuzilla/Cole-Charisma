@@ -374,3 +374,97 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the application
     init();
 });
+
+async function loadLatestVideo() {
+    // Your API key
+    const apiKey = 'AIzaSyDebPdO8hgbhlj666Q9NLfzqcdr547wF1o';
+    
+    // Channel username
+    const channelUsername = 'test-x3t';
+    
+    try {
+        // First get the channel ID
+        const channelResponse = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${channelUsername}&type=channel&key=${apiKey}`
+        );
+        const channelData = await channelResponse.json();
+        
+        if (!channelData.items || channelData.items.length === 0) {
+            throw new Error('Channel not found');
+        }
+        
+        const channelId = channelData.items[0].id.channelId;
+        
+        // Get only the latest video
+        const videoResponse = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${channelId}&order=date&type=video&maxResults=1&key=${apiKey}`
+        );
+        const videoData = await videoResponse.json();
+        
+        const container = document.getElementById('latest-video');
+        container.innerHTML = ''; // Clear any existing content
+        
+        if (!videoData.items || videoData.items.length === 0) {
+            container.innerHTML = '<p>No videos found</p>';
+            return;
+        }
+        
+        const video = videoData.items[0];
+        const videoId = video.id.videoId;
+        const title = video.snippet.title;
+        
+        container.innerHTML = `
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/${videoId}"
+                    title="${title}"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <h3>${title}</h3>
+        `;
+        
+    } catch (error) {
+        console.error('Error loading YouTube video:', error);
+        const container = document.getElementById('latest-video');
+        container.innerHTML = '<p>Error loading video. Please check the console for details.</p>';
+    }
+}
+
+// Add styling
+const style = document.createElement('style');
+style.textContent = `
+    .latest-video {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        margin-bottom: 15px;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .latest-video h3 {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+`;
+document.head.appendChild(style);
+
+// Load the video when the page loads
+document.addEventListener('DOMContentLoaded', loadLatestVideo);
