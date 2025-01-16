@@ -1366,7 +1366,6 @@ form button:hover {
 /* About Us Page Styles */
 .our-story {
     padding: 80px 0;
-    background-color: var(--color-background);
 }
 
 .story-header {
@@ -1386,32 +1385,8 @@ form button:hover {
     color: var(--color-text-secondary);
 }
 
-.story-image {
-    position: relative;
-    text-align: right;
-    margin-top: -100px;
-}
-
-.story-image img {
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transform: rotate(3deg);
-}
-
-.decorative-monogram {
-    position: absolute;
-    bottom: -30px;
-    right: 80px;
-    font-family: 'Aaleyah';
-    font-size: 4rem;
-    color: var(--color-primary);
-    opacity: 0.2;
-}
-
 .individual-story {
     padding: 60px 0;
-    background-color: white;
 }
 
 .story-content {
@@ -1440,12 +1415,6 @@ form button:hover {
     color: var(--color-text-secondary);
 }
 
-.story-photo img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 .mission-section {
     padding: 80px 0;
     background-color: var(--color-background);
@@ -1466,12 +1435,6 @@ form button:hover {
     position: relative;
     padding-left: 20px;
     border-left: 3px solid var(--color-primary);
-}
-
-.mission-photo img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Styles */
