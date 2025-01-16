@@ -1041,6 +1041,18 @@ form button:hover {
     filter: sepia(0.3) brightness(0.7);
 }
 
+.banneraboutus-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/banners/ABOUTUSBANNER.png');
+    background-size: cover;
+    background-position: center;
+    filter: sepia(0.3) brightness(0.7);
+}
+
 .banner-content {
     position: relative;
     z-index: 1;
