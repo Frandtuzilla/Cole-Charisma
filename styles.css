@@ -1362,3 +1362,137 @@ form button:hover {
         font-size: 2rem;
     }
 }
+
+/* About Us Page Styles */
+.our-story {
+    padding: 80px 0;
+    background-color: var(--color-background);
+}
+
+.story-header {
+    text-align: left;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.story-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.story-intro {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.story-image {
+    position: relative;
+    text-align: right;
+    margin-top: -100px;
+}
+
+.story-image img {
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: rotate(3deg);
+}
+
+.decorative-monogram {
+    position: absolute;
+    bottom: -30px;
+    right: 80px;
+    font-family: 'Aaleyah';
+    font-size: 4rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+}
+
+.individual-story {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.story-content.reverse {
+    direction: rtl;
+}
+
+.story-content.reverse .story-text {
+    direction: ltr;
+}
+
+.story-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.story-photo img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section {
+    padding: 80px 0;
+    background-color: var(--color-background);
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.mission-text blockquote {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid var(--color-primary);
+}
+
+.mission-photo img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .story-content,
+    .mission-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-image {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .story-image img {
+        max-width: 100%;
+    }
+
+    .decorative-monogram {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
