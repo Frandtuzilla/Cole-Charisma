@@ -468,3 +468,25 @@ document.head.appendChild(style);
 
 // Load the video when the page loads
 document.addEventListener('DOMContentLoaded', loadLatestVideo);
+
+
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const body = document.body;
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+});
+
+// Close mobile menu when clicking on a link
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        body.style.overflow = 'auto';
+    });
+});
