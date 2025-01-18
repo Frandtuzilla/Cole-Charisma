@@ -1,11 +1,26 @@
 /*==========================================================================
  * Table of Contents:
- * 1. Variables
- * 2. Reset
- * 3. Typography
+ * 1. Variables & Root Configuration
+ * 2. Base Styles & Reset
+ * 3. Typography & Fonts
+ * 4. Layout Components
+ *    4.1. Header
+ *    4.2. Navigation
+ *    4.3. Footer
+ * 5. Page Components
+ *    5.1. Slider
+ *    5.2. Sections
+ *    5.3. Press & Media
+ *    5.4. Social Posts
+ * 6. Forms & Interactive Elements
+ * 7. Page-Specific Styles
+ *    7.1. Press Page
+ *    7.2. Contact Page
+ *    7.3. About Us Page
+ * 8. Utilities & Media Queries
 ==========================================================================*/
 
-/* 1. Variables
+/* 1. Variables & Root Configuration
 ========================================================================== */
 :root {
     /* Primary Colors */
@@ -36,7 +51,7 @@
     --color-overlay: rgba(44, 24, 16, 0.6);
 }
 
-/* 2. Reset
+/* 2. Base Styles & Reset
 ========================================================================== */
 * {
     font-family: 'Quicksand';
@@ -51,7 +66,7 @@ body {
     font-size: 16px;
 }
 
-/* 3. Typography
+/* 3. Typography & Fonts
 ========================================================================== */
 @font-face {
     font-family: 'Blisstwin';
@@ -59,11 +74,10 @@ body {
     src: url('images/fonts/Blisstwin/Blisstwin.eot') format('embedded-opentype'), /* IE6-IE8 */
          url('images/fonts/Blisstwin/Blisstwin.woff') format('woff'), /* Modern Browsers */
          url('images/fonts/Blisstwin/Blisstwin.ttf') format('truetype'); /* Safari, Android, iOS */
-             font-style: italic;
+    font-style: italic;
     font-weight: normal;
     text-rendering: optimizeLegibility;
 }
-
 
 @font-face {
     font-family: 'Aaleyah';
@@ -75,10 +89,19 @@ body {
     font-display: swap;
 }
 
+.title-orange {
+    font-family: 'Blisstwin';
+    color: var(--color-primary);
+}
 
-/* 4. Header
+.title-blue {
+    font-family: 'Aaleyah';
+    color: var(--color-secondary);
+}
+
+/* 4. Layout Components
 ========================================================================== */
-/* 4.1 Top Bar */
+/* 4.1. Header */
 header {
     font-family: 'Blisstwin';
     background-color: transparent;
@@ -145,38 +168,7 @@ header.scrolled nav ul li a:hover {
     transition: all 0.3s ease;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 12px;
-}
-
-.social-icons:first-child {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-text-light);
-}
-
-.social-icons a:hover img {
-    transform: scale(1.2);
-}
-
-/* 4.2 Navigation */
+/* 4.2. Navigation */
 .nav-container {
     display: flex;
     justify-content: center;
@@ -252,7 +244,6 @@ nav ul li a:hover::before {
     transform: translate(-50%, -50%) scale(1);
 }
 
-/* 4.3 Logo */
 .logo {
     margin: 0 4rem;
 }
@@ -263,9 +254,73 @@ nav ul li a:hover::before {
     transition: var(--transition-default);
 }
 
-/* 5. Slider Components
+/* 4.3. Footer */
+.site-footer {
+    background-color: #8FA6A6;
+    color: white;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: sans-serif;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.about-text, .location {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.socials {
+    margin: 2rem 0;
+}
+
+.socials h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-logo {
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 5. Page Components
 ========================================================================== */
-/* 5.1 Container & Main Slider */
+/* 5.1. Slider */
 .slider-container {
     position: relative;
     width: 100%;
@@ -281,7 +336,6 @@ nav ul li a:hover::before {
     overflow: hidden;
 }
 
-/* 5.2 Slides */
 .slide {
     min-width: 100%;
     height: 100%;
@@ -312,7 +366,6 @@ nav ul li a:hover::before {
     z-index: 0;
 }
 
-/* 5.3 Navigation */
 .slider-nav {
     position: absolute;
     top: 0;
@@ -347,7 +400,6 @@ nav ul li a:hover::before {
     transform: translateY(-50%) scale(1.1);
 }
 
-/* 5.4 Text Overlay */
 .slider-text-overlay {
     position: relative;
     z-index: 2;
@@ -374,70 +426,12 @@ nav ul li a:hover::before {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.read-more-btn {
-    display: inline-block;
-    background-color: #848D7C;
-    color: var(--color-text-light);
-    text-decoration: none;
-    padding: 12px 28px;
-    font-size: 0.9rem;
-    font-family: 'Blisstwin';
-    letter-spacing: 0.1em;
-    transition: var(--transition-default);
-    border: none;
-    border-radius: 4px;
-    margin-top: 5px;
-    text-transform: uppercase;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.read-more-btn:hover {
-    background-color: var(--color-primary-light);
-    transform: translateY(-2px);
-}
-
-/* 5.5 Press Logos */
-.press-logos {
-    background-image: url('images/backgrounds/BRUSHSTROKEBEIGE.png');
-    background-repeat: no-repeat;
-    background-size: 105% 100%;
-    background-position: top center;
-    margin-top: -80px;
-    padding: 110px 0 60px;
-    position: relative;
-    z-index: 2;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.logo-container img {
-    height: 150px;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(446%) hue-rotate(152deg) brightness(87%) contrast(84%);
-    transition: transform 0.3s ease;
-}
-
-.logo-container img:hover {
-    transform: scale(1.05);
-}
-
-/* 6. Sections
-========================================================================== */
-/* 6.1 General Section Styles */
+/* 5.2. Sections */
 section {
     padding: 4rem 0;
     text-align: center;
 }
 
-/* 6.2 Welcome Section */
 .welcome-section {
     background-image: url('images/backgrounds/background1.jpg');
     width: 100%;
@@ -469,16 +463,6 @@ section {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 30px;
     font-family: 'Blisstwin';
-}
-
-.title-orange {
-    font-family: 'Blisstwin';
-    color: var(--color-primary);
-}
-
-.title-blue {
-    font-family: 'Aaleyah';
-    color: var(--color-secondary);
 }
 
 .welcome-content {
@@ -529,7 +513,6 @@ section {
     color: var(--color-text-secondary);
 }
 
-/* 6.3 Collaboration Section */
 .collaboration-section {
     position: relative;
     padding-bottom: 80px;
@@ -548,6 +531,38 @@ section {
     gap: 4rem;
     position: relative;
     overflow: visible;
+}
+
+/* 5.3. Press & Media */
+.press-logos {
+    background-image: url('images/backgrounds/BRUSHSTROKEBEIGE.png');
+    background-repeat: no-repeat;
+    background-size: 105% 100%;
+    background-position: top center;
+    margin-top: -80px;
+    padding: 110px 0 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.logo-container img {
+    height: 150px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(446%) hue-rotate(152deg) brightness(87%) contrast(84%);
+    transition: transform 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.05);
 }
 
 /* Photo Container Styling */
@@ -638,8 +653,7 @@ section {
     text-align: left;
 }
 
-/* 7. Social Posts
-========================================================================== */
+/* 5.4. Social Posts */
 .social-posts {
     max-width: 1200px;
     margin: 0 auto;
@@ -759,7 +773,7 @@ section {
     background-color: #C85C3F;
 }
 
-/* 8. Forms
+/* 6. Forms & Interactive Elements
 ========================================================================== */
 form {
     display: flex;
@@ -840,112 +854,14 @@ form button:hover {
     transform: translateY(-2px);
 }
 
-/* 9. Footer
+/* 7. Page-Specific Styles
 ========================================================================== */
-.site-footer {
-    background-color: #8FA6A6;
-    color: white;
-    padding: 4rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-family: sans-serif;
-}
-
-.footer-section {
-    flex: 1;
-    padding: 0 2rem;
-}
-
-.section-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.about-text, .location {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-.socials {
-    margin: 2rem 0;
-}
-
-.socials h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.social-links a {
-    color: white;
-    text-decoration: none;
-}
-
-.footer-nav {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.footer-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.footer-logo {
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
-}
-
-.recent-posts .post {
-    margin-bottom: 1rem;
-}
-
-.post .date {
-    display: block;
-    font-size: 0.8rem;
-    margin-bottom: 0.2rem;
-}
-
-.post .post-title {
-    color: white;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .site-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin-bottom: 2rem;
-    }
-
-    .social-links, .footer-nav {
-        justify-content: center;
-    }
-}
-
-/* 10. PRESS SITE
-========================================================================== */
-/* Press Container Styles */
+/* 7.1. Press Page */
 .press-container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header Styles */
 .press-header {
     text-align: center;
     margin-bottom: 50px;
@@ -970,7 +886,6 @@ form button:hover {
     line-height: 1.6;
 }
 
-/* Press Grid Styles */
 .press-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -980,7 +895,6 @@ form button:hover {
     margin: 0 auto;
 }
 
-/* Press Item Styles */
 .press-item {
     position: relative;
     width: 100%;
@@ -994,7 +908,6 @@ form button:hover {
     transform: translateY(-5px);
 }
 
-/* Image Container Styles */
 .image-container {
     position: relative;
     width: 100%;
@@ -1021,6 +934,13 @@ form button:hover {
     transition: opacity 0.3s ease;
 }
 
+.press-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Banner Styles */
 .banner-container {
     position: relative;
     width: 100%;
@@ -1088,16 +1008,7 @@ form button:hover {
     background-position: center;
 }
 
-/* Link Styles */
-.press-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* 11. CONTACT SITE
-========================================================================== */
-
+/* 7.2. Contact Page */
 .bannercontact-overlay {
     position: absolute;
     top: 0;
@@ -1110,14 +1021,14 @@ form button:hover {
     filter: sepia(0.3) brightness(0.7);
 }
 
-/* Collaboration Info Section */
 .collaboration-info {
     padding: 5rem 0rem;
     background-image: url('images/backgrounds/CONTACTUSBACKGROUND.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
-    z-index: 1;}
+    z-index: 1;
+}
 
 .collab-container {
     max-width: 1200px;
@@ -1144,7 +1055,6 @@ form button:hover {
     font-size: 1.1rem;
 }
 
-/* Contact Form Section */
 .contact-form-section {
     padding: 3rem 2rem;
     background-color: white;
@@ -1284,86 +1194,8 @@ form button:hover {
     background: var(--color-accent-light);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-grid,
-    .media-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .contact-form .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-form textarea {
-        grid-column: span 1;
-    }
-
-    .collab-container h2,
-    .contact-content h2,
-    .media-content h2 {
-        font-size: 2rem;
-    }
-
-    .contact-image,
-    .media-image {
-        order: -1;
-    }
-}
-
-@media (max-width: 480px) {
-    .collaboration-info,
-    .contact-form-section,
-    .media-kit-section {
-        padding: 2rem 1rem;
-    }
-
-    .collab-container h2,
-    .contact-content h2,
-    .media-content h2 {
-        font-size: 1.8rem;
-    }
-}
-
-/* 12. Media Queries
+/* 7.3. About Us Page
 ========================================================================== */
-/* Responsive Adjustments for Press Site */
-@media (max-width: 768px) {
-    .press-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .press-header h1 {
-        font-size: 2.5rem;
-    }
-
-    .site-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-section {
-        margin-bottom: 2rem;
-    }
-
-    .social-links, .footer-nav {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .press-container {
-        padding: 20px 10px;
-    }
-
-    .press-header h1 {
-        font-size: 2rem;
-    }
-}
-
-/* About Us Page Styles */
 .our-story {
     padding: 80px 0;
 }
@@ -1437,8 +1269,117 @@ form button:hover {
     border-left: 3px solid var(--color-primary);
 }
 
-/* Responsive Styles */
+/* 8. Utilities & Media Queries
+========================================================================== */
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-icons:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text-light);
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+/* Read More Button */
+.read-more-btn {
+    display: inline-block;
+    background-color: #848D7C;
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-family: 'Blisstwin';
+    letter-spacing: 0.1em;
+    transition: var(--transition-default);
+    border: none;
+    border-radius: 4px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
+    /* Header & Navigation */
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    .social-links, .footer-nav {
+        justify-content: center;
+    }
+
+    /* Press Page */
+    .press-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .press-header h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Contact Page */
+    .contact-grid,
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form textarea {
+        grid-column: span 1;
+    }
+
+    .collab-container h2,
+    .contact-content h2,
+    .media-content h2 {
+        font-size: 2rem;
+    }
+
+    .contact-image,
+    .media-image {
+        order: -1;
+    }
+
+    /* About Us Page */
     .story-content,
     .mission-content {
         grid-template-columns: 1fr;
@@ -1457,5 +1398,29 @@ form button:hover {
     .decorative-monogram {
         right: 50%;
         transform: translateX(50%);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Press Page */
+    .press-container {
+        padding: 20px 10px;
+    }
+
+    .press-header h1 {
+        font-size: 2rem;
+    }
+
+    /* Contact Page */
+    .collaboration-info,
+    .contact-form-section,
+    .media-kit-section {
+        padding: 2rem 1rem;
+    }
+
+    .collab-container h2,
+    .contact-content h2,
+    .media-content h2 {
+        font-size: 1.8rem;
     }
 }
