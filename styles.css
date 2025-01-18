@@ -641,11 +641,13 @@ section {
 
 .logo-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 .logo-container img {
@@ -653,6 +655,8 @@ section {
     width: auto;
     filter: brightness(0) saturate(100%) invert(67%) sepia(14%) saturate(446%) hue-rotate(152deg) brightness(87%) contrast(84%);
     transition: transform 0.3s ease;
+    aspect-ratio: auto; /* Prevent layout shifts during image load */
+    object-fit: contain;
 }
 
 .logo-container img:hover {
@@ -1467,6 +1471,22 @@ form button:hover {
         margin: 0;
     }
     
+    /* Press Logos in Home Page */
+
+    .press-logos {
+        margin-top: -60px;
+        padding: 80px 0 40px;
+    }
+    
+    .logo-container {
+        gap: 25px;
+        justify-content: center;
+    }
+    
+    .logo-container img {
+        height: 100px;
+    }
+
     /* Press Page */
     .press-grid {
         grid-template-columns: 1fr;
@@ -1593,6 +1613,22 @@ form button:hover {
 }
 
 @media (max-width: 480px) {
+
+    /* Press Logos in Home Page */
+
+    .press-logos {
+        margin-top: -40px;
+        padding: 60px 0 30px;
+    }
+    
+    .logo-container {
+        gap: 20px;
+    }
+    
+    .logo-container img {
+        height: 80px;
+    }
+
     /* Press Page */
     .press-container {
         padding: 20px 10px;
