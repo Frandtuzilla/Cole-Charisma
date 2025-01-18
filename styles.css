@@ -1523,6 +1523,58 @@ form button:hover {
         right: 50%;
         transform: translateX(50%);
     }
+
+    /* Slider */
+
+    .slider-container {
+        height: 80vh; /* Reduced height for mobile */
+    }
+
+    .slider-text-overlay {
+        padding: 0 15px;
+        max-width: 100%;
+    }
+
+    .slider-text-overlay h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 0.3rem;
+    }
+
+    .slider-text-overlay h2 {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        margin-bottom: 1rem;
+    }
+
+    .read-more-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+
+    /* Adjust navigation arrows for mobile */
+    .slider-nav img {
+        width: 60px;
+        height: 45px;
+    }
+
+    .slider-nav img.prev-btn {
+        left: 10px;
+    }
+
+    .slider-nav img.next-btn {
+        right: 10px;
+    }
+
+    .slide img {
+        object-position: center center;
+    }
+
+    /* Improve gradient overlay visibility on mobile */
+    .slide::before {
+        background: linear-gradient(
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        );
+    }
 }
 
 @media (max-width: 640px) {
@@ -1562,4 +1614,63 @@ form button:hover {
     .media-content h2 {
         font-size: 1.8rem;
     }
+
+    /* Slider */
+
+    .slider-container {
+        height: 70vh;
+    }
+
+    .slider-text-overlay h1 {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+    }
+
+    .slider-text-overlay h2 {
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    }
+
+    /* Further reduce navigation arrows */
+    .slider-nav img {
+        width: 45px;
+        height: 35px;
+    }
+
+    .slider-nav img.prev-btn {
+        left: 5px;
+    }
+
+    .slider-nav img.next-btn {
+        right: 5px;
+    }
+
+}
+
+@media (hover: none) {
+    .slide {
+        touch-action: pan-y pinch-zoom;
+    }
+    
+    .slider-nav img:hover {
+        transform: translateY(-50%); /* Remove hover scale effect on touch devices */
+    }
+}
+
+/* Additional slider improvements */
+.slider {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    overscroll-behavior-x: contain; /* Prevent unwanted scroll chaining */
+}
+
+/* Prevent text selection during swipe */
+.slider-container {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Optimize performance */
+.slide {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
