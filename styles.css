@@ -539,7 +539,7 @@ section {
 .new-videos {
     background-image: url('images/backgrounds/background2.jpg');
     width: 100%;
-    padding: 60px 0;
+    padding: 35px 0;
     background-size: cover;
     background-position: center;
     position: relative;

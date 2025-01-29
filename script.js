@@ -13,6 +13,8 @@
 // 5. Event Listeners
 // ==========================================================================
 
+import config from './config.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Constants & Variables for Main Slider
     // ==========================================================================
@@ -376,8 +378,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadLatestVideo() {
-    const apiKey = 'AIzaSyDebPdO8hgbhlj666Q9NLfzqcdr547wF1o';
+    const apiKey = config.YOUTUBE_API_KEY;
     const channelUsername = 'test-x3t';
+    
+    if (!apiKey) {
+        console.error('YouTube API key is not configured');
+        return;
+    }
     
     try {
         // First get the channel ID
