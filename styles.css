@@ -1935,6 +1935,39 @@ form button:hover {
     }
 }
 
+/* Social Posts Section Mobile Styles */
+@media (max-width: 768px) {
+    .social-posts {
+        padding: 40px 20px;
+    }
+
+    .social-posts h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .social-posts h2 .title-orange,
+    .social-posts h2 .title-blue {
+        display: block; /* Stack the title parts vertically */
+    }
+
+    .social-posts h2 .title-orange {
+        margin-bottom: 5px; /* Add space between the stacked words */
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .social-posts {
+        padding: 30px 15px;
+    }
+
+    .social-posts h2 {
+        font-size: 1.75rem;
+    }
+}
+
 /* Additional slider improvements */
 .slider {
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
