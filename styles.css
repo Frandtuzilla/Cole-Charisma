@@ -327,6 +327,16 @@ nav ul li a:hover::before {
     width: 100%;
 }
 
+/* Override the stroke effect for mobile menu links */
+.mobile-menu ul li a::before {
+    display: none;
+}
+
+/* Add a simpler hover effect for mobile menu */
+.mobile-menu ul li a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 /* 4.3. Footer */
 .site-footer {
     background-color: #8FA6A6;
