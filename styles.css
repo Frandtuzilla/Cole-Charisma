@@ -305,11 +305,15 @@ nav ul li a:hover::before {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .mobile-menu ul li {
-    margin: 20px 0;
+    width: 100%;
+    text-align: center;
 }
 
 .mobile-menu ul li a {
@@ -318,6 +322,9 @@ nav ul li a:hover::before {
     font-size: 1.5rem;
     font-family: 'Blisstwin';
     text-transform: uppercase;
+    padding: 10px 0;
+    display: inline-block;
+    width: 100%;
 }
 
 /* 4.3. Footer */
