@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadLatestVideo() {
-    const apiKey = config.YOUTUBE_API_KEY;
+    const apiKey = AIzaSyDebPdO8hgbhlj666Q9NLfzqcdr547wF1o;
     const channelUsername = 'test-x3t';
     
     if (!apiKey) {
