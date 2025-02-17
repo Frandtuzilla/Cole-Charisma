@@ -568,6 +568,89 @@ section {
     align-items: center;
 }
 
+.video-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.latest-video {
+    width: 100%;
+}
+
+.latest-video .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    width: 100%;
+}
+
+.latest-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.latest-video h3 {
+    padding: 20px;
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* Update existing media queries */
+@media (max-width: 768px) {
+    .new-videos {
+        padding: 40px 0;
+    }
+    
+    .new-videos .welcome-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .video-wrapper {
+        max-width: 100%;
+    }
+}
+
+.video-description {
+    padding: 20px;
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+    max-height: 100px;
+    overflow-y: auto;
+    white-space: pre-line;
+}
+
+/* Add a subtle scrollbar style for the description */
+.video-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.video-description::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.video-description::-webkit-scrollbar-thumb {
+    background: var(--color-secondary-light);
+    border-radius: 3px;
+}
+
+.video-description::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
 
 .welcome-container {
     max-width: 1200px;

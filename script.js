@@ -395,3 +395,59 @@ mobileMenuLinks.forEach(link => {
         body.style.overflow = 'auto';
     });
 });
+
+async function fetchLatestVideo() {
+    const YOUTUBE_API_KEY = 'AIzaSyDebPdO8hgbhlj666Q9NLfzqcdr547wF1o';
+    const CHANNEL_ID = 'UCJbzhDMR06nNIPon4aLCR9g';
+    const videoWrapper = document.getElementById('latest-video-wrapper');
+
+    if (!videoWrapper) return;
+
+    try {
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1&type=video`
+        );
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch video');
+        }
+
+        const data = await response.json();
+        
+        if (!data.items || data.items.length === 0) {
+            throw new Error('No videos found');
+        }
+
+        const video = data.items[0];
+        const videoId = video.id.videoId;
+        const snippet = video.snippet;
+        const publishDate = new Date(snippet.publishedAt).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        videoWrapper.innerHTML = `
+            <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="video-link">
+                <div class="video-thumbnail">
+                    <img src="${snippet.thumbnails.high.url}" alt="${snippet.title}">
+                    <div class="play-button"></div>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">${snippet.title}</h3>
+                    <div class="video-meta">Published on ${publishDate}</div>
+                </div>
+            </a>
+        `;
+    } catch (error) {
+        console.error('Error loading YouTube video:', error);
+        videoWrapper.innerHTML = `
+            <div class="video-loading">
+                Failed to load the latest video. Please try again later.
+            </div>
+        `;
+    }
+}
+
+// Call the function when the document is loaded
+document.addEventListener('DOMContentLoaded', fetchLatestVideo);
